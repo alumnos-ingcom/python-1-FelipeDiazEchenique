@@ -22,7 +22,7 @@ def division_lenta(dividendo, divisor):
         dividendo/divisor
     except ZeroDivisionError as error:
         print(f"\nError al ingresar {divisor} como divisor.\
-\nZeroDivisionError: {error}")
+                \nZeroDivisionError: {error}")
         sys.exit()
 
     cociente = 0
