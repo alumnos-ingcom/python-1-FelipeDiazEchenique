@@ -23,8 +23,6 @@ def compara(numero_1, numero_2):
     1 si el primero es mayor que el segundo.
     """
 
-    valor_temp = 0
-
     if (1/2) * (numero_1 + numero_2 + abs(numero_1 - numero_2)) != numero_1:
         valor_temp = -1    # El primer número es MENOR que el segundo.
     elif (numero_1 + numero_2) / 2 == numero_1:
