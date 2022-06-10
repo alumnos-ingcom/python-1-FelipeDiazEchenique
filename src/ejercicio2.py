@@ -15,9 +15,9 @@ def signo(numero):
     """
     Recibe un número entero y retorna:
 
-    2 si es positivo.
-    1 si es cero.
-    0 si es negativo.
+    "positivo", si es positivo.
+    "cero", si es cero.
+    "negativo", si es negativo.
     """
 
     if 1 + (numero // (2 ** 50)) - (-numero // (2 ** 50)) == 2:
