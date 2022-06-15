@@ -18,8 +18,10 @@ def es_palindromo(texto):
     * True, si es palíndromo.
     * False, si NO es palíndromo.
     """
+    texto_modificado = texto.lower()
+    texto_modificado = texto_modificado.replace(" ", "")
 
-    if texto == texto[::-1]:
+    if texto_modificado == texto_modificado[::-1]:
         return True
 
     return False
