@@ -18,7 +18,7 @@ def es_multiplo(numero, multiplo):
     * False, si un número entero NO es multiplo de otro
     """
     if numero == 0 or multiplo == 0:
-        return False
+        return True
 
     numero = abs(numero)
     multiplo = abs(multiplo)
