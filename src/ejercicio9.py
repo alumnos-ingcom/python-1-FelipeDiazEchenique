@@ -25,7 +25,7 @@ def factores_primos(numero):
     i = 2
     while i < numero + 1:
         while numero % i == 0:
-            primos = primos + (i, )
+            primos = primos + (i,)
             numero = numero / i
         i += 1
 
