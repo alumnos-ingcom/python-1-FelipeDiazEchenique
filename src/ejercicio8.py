@@ -17,7 +17,10 @@ def es_primo(numero):
     * False, si NO es un número primo.
     """
     if numero <= 1:
-        raise Exception("El número ingresado debe ser mayor a 1.")
+        try:
+            raise ValueError("El número ingresado debe ser mayor a 1.")
+        except ValueError as exc:
+            return exc
 
     contador = 2
     while contador < numero:
@@ -37,10 +40,14 @@ def principal():
     print("Ingrese un número: ", end='')
     numero_entrada = int(input())
 
-    if es_primo(numero_entrada):
-        print("\nEs número primo.")
+    if numero_entrada <= 1:
+        error = es_primo(numero_entrada)
+        print(f"\n{error}")
     else:
-        print("\nNO es número primo.")
+        if es_primo(numero_entrada):
+            print("\nEs número primo.")
+        else:
+            print("\nNO es número primo.")
 
 
 if __name__ == "__main__":
