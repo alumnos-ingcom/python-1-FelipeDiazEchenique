@@ -17,12 +17,11 @@ def sexadecimal_a_decimal(horas, minutos, segundos):
     Recibe 3 números enteros positivos (horas, minutos y segundos)
     y retorna la conversión del total a segundos.
     """
-    if horas < 0:
-        raise Exception("Las horas deben ser positivas.")
-    if minutos < 0:
-        raise Exception("Los minutos deben ser positivos.")
-    if segundos < 0:
-        raise Exception("Los segundos deben ser positivos.")
+    if horas < 0 or minutos < 0 or segundos < 0:
+        try:
+            raise ValueError("Error al ingresar un valor negativo.")
+        except ValueError as exc:
+            return exc
 
     segundos_total = 0
 
@@ -39,7 +38,10 @@ def decimal_a_sexadecimal(numero):
     tupla con las conversión a horas, minutos y segundos.
     """
     if numero < 0:
-        raise Exception("Los segundos deben ser positivos.")
+        try:
+            raise ValueError("Error al ingresar un valor negativo.")
+        except ValueError as exc:
+            return exc
 
     if numero >= 3600:
         horas = numero // 3600
@@ -68,14 +70,21 @@ def principal():
     print("Ingrese los segundos: ", end='')
     segundos_entrada = int(input())
 
-    sugundos_salida = sexadecimal_a_decimal(grados_entrada, minutos_entrada,
-                                            segundos_entrada)
-    print(f"\nSegundos: {sugundos_salida}")
+    if grados_entrada < 0 or minutos_entrada < 0 or segundos_entrada < 0:
+        resultado_error = sexadecimal_a_decimal(grados_entrada,
+                                                minutos_entrada,
+                                                segundos_entrada)
+        print(f"\n{resultado_error}")
+    else:
+        sugundos_salida = sexadecimal_a_decimal(grados_entrada,
+                                                minutos_entrada,
+                                                segundos_entrada)
+        print(f"\nSegundos: {sugundos_salida}")
 
-    tupla_h_m_s = decimal_a_sexadecimal(sugundos_salida)
-    print(f"\nHoras: {tupla_h_m_s[0]}\
-            \nMinutos: {tupla_h_m_s[1]}\
-            \nSegundos: {tupla_h_m_s[2]}")
+        tupla_h_m_s = decimal_a_sexadecimal(sugundos_salida)
+        print(f"\nHoras: {tupla_h_m_s[0]}\
+                \nMinutos: {tupla_h_m_s[1]}\
+                \nSegundos: {tupla_h_m_s[2]}")
 
 
 if __name__ == "__main__":
