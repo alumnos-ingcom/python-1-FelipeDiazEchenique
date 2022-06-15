@@ -43,6 +43,10 @@ def decimal_a_sexadecimal(numero):
         except ValueError as exc:
             return exc
 
+    horas = 0
+    minutos = 0
+    segundos = 0
+
     if numero >= 3600:
         horas = numero // 3600
         numero -= horas * 3600
@@ -76,12 +80,12 @@ def principal():
                                                 segundos_entrada)
         print(f"\n{resultado_error}")
     else:
-        sugundos_salida = sexadecimal_a_decimal(grados_entrada,
+        segundos_salida = sexadecimal_a_decimal(grados_entrada,
                                                 minutos_entrada,
                                                 segundos_entrada)
-        print(f"\nSegundos: {sugundos_salida}")
+        print(f"\nSegundos: {segundos_salida}")
 
-        tupla_h_m_s = decimal_a_sexadecimal(sugundos_salida)
+        tupla_h_m_s = decimal_a_sexadecimal(segundos_salida)
         print(f"\nHoras: {tupla_h_m_s[0]}\
                 \nMinutos: {tupla_h_m_s[1]}\
                 \nSegundos: {tupla_h_m_s[2]}")
