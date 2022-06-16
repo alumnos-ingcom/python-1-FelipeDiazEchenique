@@ -38,7 +38,8 @@ def test_es_primo_numero_1():
     """
     numero = 1
     resultado = es_primo(numero)
-    assert isinstance(resultado, ValueError), "El resultado debe ser un error."
+    with pytest.raises(ValueError):
+        raise ValueError("\nEl número ingresado debe ser mayor a 1.")
 
 
 def test_es_primo_numero_0():
@@ -47,7 +48,8 @@ def test_es_primo_numero_0():
     """
     numero = 0
     resultado = es_primo(numero)
-    assert isinstance(resultado, ValueError), "El resultado debe ser un error."
+    with pytest.raises(ValueError):
+        raise ValueError("\nEl número ingresado debe ser mayor a 1.")
 
 
 def test_es_primo_numero_negativo():
@@ -56,5 +58,5 @@ def test_es_primo_numero_negativo():
     """
     numero = -1
     resultado = es_primo(numero)
-    assert isinstance(resultado, ValueError), "El resultado debe ser un error."
-
+    with pytest.raises(ValueError):
+        raise ValueError("\nEl número ingresado debe ser mayor a 1.")
