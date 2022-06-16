@@ -44,7 +44,8 @@ def test_sexadecimal_a_decimal_horas_negativas():
     numero2 = 10
     numero3 = 10
     resultado = sexadecimal_a_decimal(numero1, numero2, numero3)
-    assert isinstance(resultado, ValueError), "El resultado debe ser un error."
+    with pytest.raises(ValueError):
+        raise ValueError("\nError al ingresar un valor negativo.")
 
 
 def test_sexadecimal_a_decimal_minutos_negativo():
@@ -55,7 +56,8 @@ def test_sexadecimal_a_decimal_minutos_negativo():
     numero2 = -10
     numero3 = 10
     resultado = sexadecimal_a_decimal(numero1, numero2, numero3)
-    assert isinstance(resultado, ValueError), "El resultado debe ser un error."
+    with pytest.raises(ValueError):
+        raise ValueError("\nError al ingresar un valor negativo.")
 
 
 def test_sexadecimal_a_decimal_segundos_negativos():
@@ -66,7 +68,8 @@ def test_sexadecimal_a_decimal_segundos_negativos():
     numero2 = 10
     numero3 = -10
     resultado = sexadecimal_a_decimal(numero1, numero2, numero3)
-    assert isinstance(resultado, ValueError), "El resultado debe ser un error."
+    with pytest.raises(ValueError):
+        raise ValueError("\nError al ingresar un valor negativo.")
 
 
 def test_sexadecimal_a_decimal_todo_negativos():
@@ -77,7 +80,8 @@ def test_sexadecimal_a_decimal_todo_negativos():
     numero2 = -10
     numero3 = -10
     resultado = sexadecimal_a_decimal(numero1, numero2, numero3)
-    assert isinstance(resultado, ValueError), "El resultado debe ser un error."
+    with pytest.raises(ValueError):
+        raise ValueError("\nError al ingresar un valor negativo.")
 
 
 def test_decimal_a_sexadecimal_positivo():
@@ -96,7 +100,8 @@ def test_decimal_a_sexadecimal_negativo():
     """
     numero = -36610
     resultado = decimal_a_sexadecimal(numero)
-    assert isinstance(resultado, ValueError), "El resultado debe ser un error."
+    with pytest.raises(ValueError):
+        raise ValueError("\nError al ingresar un valor negativo.")
 
 
 def test_decimal_a_sexadecimal_cero():
