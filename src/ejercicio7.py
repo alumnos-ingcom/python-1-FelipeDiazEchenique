@@ -19,9 +19,9 @@ def sexadecimal_a_decimal(horas, minutos, segundos):
     """
     if horas < 0 or minutos < 0 or segundos < 0:
         try:
-            raise ValueError("Error al ingresar un valor negativo.")
+            raise ValueError("\nError al ingresar un valor negativo.")
         except ValueError as exc:
-            return exc
+            print(exc)
 
     segundos_total = 0
 
@@ -39,9 +39,9 @@ def decimal_a_sexadecimal(numero):
     """
     if numero < 0:
         try:
-            raise ValueError("Error al ingresar un valor negativo.")
+            raise ValueError("\nError al ingresar un valor negativo.")
         except ValueError as exc:
-            return exc
+            print(exc)
 
     horas = 0
     minutos = 0
@@ -74,21 +74,15 @@ def principal():
     print("Ingrese los segundos: ", end='')
     segundos_entrada = int(input())
 
-    if grados_entrada < 0 or minutos_entrada < 0 or segundos_entrada < 0:
-        resultado_error = sexadecimal_a_decimal(grados_entrada,
-                                                minutos_entrada,
-                                                segundos_entrada)
-        print(f"\n{resultado_error}")
-    else:
-        segundos_salida = sexadecimal_a_decimal(grados_entrada,
-                                                minutos_entrada,
-                                                segundos_entrada)
-        print(f"\nSegundos: {segundos_salida}")
+    segundos_salida = sexadecimal_a_decimal(grados_entrada,
+                                            minutos_entrada,
+                                            segundos_entrada)
+    print(f"\nSegundos: {segundos_salida}")
 
-        tupla_h_m_s = decimal_a_sexadecimal(segundos_salida)
-        print(f"\nHoras: {tupla_h_m_s[0]}\
-                \nMinutos: {tupla_h_m_s[1]}\
-                \nSegundos: {tupla_h_m_s[2]}")
+    tupla_h_m_s = decimal_a_sexadecimal(segundos_salida)
+    print(f"\nHoras: {tupla_h_m_s[0]}\
+            \nMinutos: {tupla_h_m_s[1]}\
+            \nSegundos: {tupla_h_m_s[2]}")
 
 
 if __name__ == "__main__":
