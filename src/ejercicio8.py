@@ -18,17 +18,21 @@ def es_primo(numero):
     """
     if numero <= 1:
         try:
-            raise ValueError("El número ingresado debe ser mayor a 1.")
+            raise ValueError("\nEl número ingresado debe ser mayor a 1.")
         except ValueError as exc:
-            return exc
+            print(exc)
 
+    valor_return = None
     contador = 2
     while contador < numero:
         if numero % contador == 0:
-            return False
+            valor_return = False
         contador += 1
 
-    return True
+    if valor_return != False:
+        valor_return = True
+
+    return valor_return
 
 
 def principal():
@@ -40,14 +44,10 @@ def principal():
     print("Ingrese un número: ", end='')
     numero_entrada = int(input())
 
-    if numero_entrada <= 1:
-        error = es_primo(numero_entrada)
-        print(f"\n{error}")
+    if es_primo(numero_entrada):
+        print("\nEs número primo.")
     else:
-        if es_primo(numero_entrada):
-            print("\nEs número primo.")
-        else:
-            print("\nNO es número primo.")
+        print("\nNO es número primo.")
 
 
 if __name__ == "__main__":
