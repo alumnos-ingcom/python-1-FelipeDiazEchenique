@@ -19,9 +19,10 @@ def division_lenta(dividendo, divisor):
     """
 
     try:
-        dividendo/divisor
+        resultado = dividendo/divisor
     except ZeroDivisionError as error:
-        return error
+        print(f"\nError al ingresar {divisor} como divisor.\
+                \nZeroDivisionError: {error}")
 
     cociente = 0
 
@@ -67,15 +68,11 @@ def principal():
     dividendo_entrada = int(input())
     print("Ingrese el divisor: ", end='')
     divisor_entrada = int(input())
-    
-    if divisor_entrada == 0:
-        resultado_error = division_lenta(dividendo_entrada, divisor_entrada)
-        print(f"\nError al ingresar {divisor_entrada} como divisor.\
-        \nZeroDivisionError: {resultado_error}")
-    else:
-        cociente_salida, resto_salida = division_lenta(dividendo_entrada,
-                                                       divisor_entrada)
-        print(f"\nCociente: {cociente_salida}\tResto: {resto_salida}")
+
+    cociente_salida, resto_salida = division_lenta(dividendo_entrada,
+                                                   divisor_entrada)
+
+    print(f"\nCociente: {cociente_salida}\tResto: {resto_salida}")
 
 
 if __name__ == "__main__":
