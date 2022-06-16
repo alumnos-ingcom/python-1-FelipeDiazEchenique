@@ -19,15 +19,14 @@ def signo(numero):
     0, si es cero.
     -1, si es negativo.
     """
-    auxiliar1 = numero + abs(numero)
-    auxiliar2 = numero - abs(numero)
+    auxiliar = (numero + abs(numero)) - numero
 
-    if auxiliar1 == 0 and auxiliar2 == 0:
-        valor_temp = 0 # Número cero
-    elif auxiliar1 == (numero * 2) and auxiliar2 == 0:
-        valor_temp = 1 # Número positivo
-    elif auxiliar1 == 0 and auxiliar2 == (numero * 2):
-        valor_temp = -1 # Número negativo
+    if auxiliar != numero:
+        valor_temp = -1    # El número es negativo.
+    elif (auxiliar + auxiliar) == (auxiliar + 0):
+        valor_temp = 0    # El número es cero.
+    elif auxiliar == numero:
+        valor_temp = 1    # El número es positivo.
 
     return valor_temp
 
