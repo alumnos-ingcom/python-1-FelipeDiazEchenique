@@ -18,7 +18,8 @@ resultado obtenido. Y viceversa.
 
 def convertir_a_fahrenheit(celsius):
     """
-    Recibe un número en grados celsius y lo retorna a grados fahrenheit.
+    Recibe un número entero y retorna:
+    Un número entero con la conversión a grados fahrenheit.
     """
     fahrenheit = (celsius * 9/5) + 32
 
@@ -27,7 +28,8 @@ def convertir_a_fahrenheit(celsius):
 
 def convertir_a_celsius(fahrenheit):
     """
-    Recibe un número en grados fahrenheit y lo retorna a grados celsius.
+    Recibe un número entero y retorna:
+    Un número entero con la conversión a grados celsius.
     """
     celsius = (fahrenheit - 32) * 5/9
 
