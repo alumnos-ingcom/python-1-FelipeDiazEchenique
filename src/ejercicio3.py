@@ -22,12 +22,13 @@ def compara(numero_1, numero_2):
     0 si son iguales.
     1 si el primero es mayor que el segundo.
     """
+    auxiliar = (numero_1 + numero_2 + abs(numero_1 - numero_2)) - numero_1
 
-    if (1/2) * (numero_1 + numero_2 + abs(numero_1 - numero_2)) != numero_1:
+    if auxiliar != numero_1:
         valor_temp = -1    # El primer número es MENOR que el segundo.
-    elif (numero_1 + numero_2) / 2 == numero_1:
+    elif (numero_1 + numero_2) == (numero_1 + numero_1):
         valor_temp = 0    # Ambos números son IGUALES.
-    elif (1/2) * (numero_1 + numero_2 + abs(numero_1 - numero_2)) == numero_1:
+    elif auxiliar == numero_1:
         valor_temp = 1    # El primer número es MAYOR que el segundo.
 
     return valor_temp
