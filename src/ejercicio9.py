@@ -17,9 +17,9 @@ def factores_primos(numero):
     """
     if numero <= 1:
         try:
-            raise ValueError("El número ingresado debe ser mayor a 1.")
+            raise ValueError("\nEl número ingresado debe ser mayor a 1.")
         except ValueError as exc:
-            return exc
+            print(exc)
 
     primos = ()
     i = 2
@@ -41,12 +41,8 @@ def principal():
     print("Ingrese un número: ", end='')
     numero_entrada = int(input())
 
-    if numero_entrada <= 1:
-        error = factores_primos(numero_entrada)
-        print(f"\n{error}")
-    else:
-        tupla_salida = factores_primos(numero_entrada)
-        print(f"\nLos factores primos de {numero_entrada}: {tupla_salida}")
+    tupla_salida = factores_primos(numero_entrada)
+    print(f"\nLos factores primos de {numero_entrada}: {tupla_salida}")
 
 
 if __name__ == "__main__":
