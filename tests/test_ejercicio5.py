@@ -73,7 +73,8 @@ def test_division_lenta_cero_divisor():
     numero1 = 5
     numero2 = 0
     resultado = division_lenta(numero1, numero2)
-    assert isinstance(resultado, ZeroDivisionError), "El resultado debe ser un error."
+    with pytest.raises(ZeroDivisionError):
+        numero1/numero2
 
 
 def test_division_lenta_positivo_con_resto():
