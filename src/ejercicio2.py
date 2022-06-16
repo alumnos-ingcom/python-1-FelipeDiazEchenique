@@ -15,17 +15,19 @@ def signo(numero):
     """
     Recibe un número entero y retorna:
 
-    "positivo", si es positivo.
-    "cero", si es cero.
-    "negativo", si es negativo.
+    1, si es positivo.
+    0, si es cero.
+    -1, si es negativo.
     """
+    auxiliar1 = numero + abs(numero)
+    auxiliar2 = numero - abs(numero)
 
-    if 1 + (numero // (2 ** 50)) - (-numero // (2 ** 50)) == 2:
-        valor_temp = "positivo"    # Si la formula es igual a 2, entonces es positivo.
-    elif 1 + (numero // (2 ** 50)) - (-numero // (2 ** 50)) == 1:
-        valor_temp = "cero"    # Si la formula es igual a 1, entonces es cero.
-    elif 1 + (numero // (2 ** 50)) - (-numero // (2 ** 50)) == 0:
-        valor_temp = "negativo"    # Si la formula es igual a 0, entonces es negativo.
+    if auxiliar1 == 0 and auxiliar2 == 0:
+        valor_temp = 0 # Número cero
+    elif auxiliar1 == (numero * 2) and auxiliar2 == 0:
+        valor_temp = 1 # Número positivo
+    elif auxiliar1 == 0 and auxiliar2 == (numero * 2):
+        valor_temp = -1 # Número negativo
 
     return valor_temp
 
@@ -41,11 +43,11 @@ def principal():
 
     valor_salida = signo(numero_entrada)
 
-    if valor_salida == "positivo":
+    if valor_salida == 1:
         print(f"\nEl número {numero_entrada} es positivo.")
-    elif valor_salida == "cero":
+    elif valor_salida == 0:
         print(f"\nEl número {numero_entrada} es cero.")
-    elif valor_salida == "negativo":
+    elif valor_salida == -1:
         print(f"\nEl número {numero_entrada} es negativo.")
 
 
