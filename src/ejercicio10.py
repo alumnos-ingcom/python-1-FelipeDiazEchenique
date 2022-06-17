@@ -37,7 +37,7 @@ def es_palindromo(texto):
         i += 1
         j -= 1
 
-    if valor_return == None:
+    if valor_return is None:
         valor_return = True
 
     return valor_return
