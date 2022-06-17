@@ -29,7 +29,7 @@ def es_primo(numero):
             valor_return = False
         contador += 1
 
-    if valor_return != False:
+    if valor_return == None:
         valor_return = True
 
     return valor_return
