@@ -18,13 +18,29 @@ def es_palindromo(texto):
     * True, si es palíndromo.
     * False, si NO es palíndromo.
     """
-    texto_modificado = texto.lower()
-    texto_modificado = texto_modificado.replace(" ", "")
+    valor_return = None
+    nuevo_texto = ""
 
-    if texto_modificado == texto_modificado[::-1]:
-        return True
+    # Este loop elimina los espacio y convierte las mayúsculas en minúsculas.
+    i = 0
+    while i < len(texto):
+        if texto[i] != ' ':
+            nuevo_texto += texto[i].lower()
+        i += 1
 
-    return False
+    # Este loop verifica si es palíndromo o no.
+    i = 0
+    j = len(nuevo_texto) - 1
+    while i < len(nuevo_texto):
+        if nuevo_texto[i] != nuevo_texto[j]:
+            valor_return = False
+        i += 1
+        j -= 1
+
+    if valor_return == None:
+        valor_return = True
+
+    return valor_return
 
 
 def principal():
