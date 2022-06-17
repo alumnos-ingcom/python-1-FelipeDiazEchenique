@@ -18,7 +18,7 @@ def es_palindromo(texto):
     * True, si es palíndromo.
     * False, si NO es palíndromo.
     """
-    valor_return = None
+    valor_return = True
     nuevo_texto = ""
 
     # Este loop elimina los espacio y convierte las mayúsculas en minúsculas.
@@ -36,9 +36,6 @@ def es_palindromo(texto):
             valor_return = False
         i += 1
         j -= 1
-
-    if valor_return is None:
-        valor_return = True
 
     return valor_return
 
